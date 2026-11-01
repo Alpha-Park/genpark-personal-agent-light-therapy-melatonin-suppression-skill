@@ -1,0 +1,25 @@
+{
+  "name": "genpark-personal-agent-light-therapy-melatonin-suppression-skill",
+  "version": "1.0.0",
+  "description": "Calculates CIE S 026 Melanopic Equivalent Daylight Illuminance (mEDI), models ipRGC melatonin suppression, and schedules clinical phototherapy.",
+  "tools": [
+    {
+      "name": "calculate_melanopic_stimulus",
+      "description": "Calculates CIE S 026 mEDI lux, ipRGC activation, and pineal melatonin suppression.",
+      "parameters": {
+        "photopic_lux": "float",
+        "light_source": "string (optional, default 'sunlight')",
+        "exposure_duration_minutes": "float (optional, default 30.0)"
+      }
+    },
+    {
+      "name": "schedule_phototherapy_session",
+      "description": "Prescribes clinical phototherapy start time, lux intensity, and duration for circadian shifts.",
+      "parameters": {
+        "target_circadian_shift": "string (optional, default 'phase_advance')",
+        "current_wake_time": "string (optional, default '07:30')",
+        "has_seasonal_depression": "bool (optional, default false)"
+      }
+    }
+  ]
+}
